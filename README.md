@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# y
-
 > A css project
 
 ## Build Setup
@@ -19,8 +16,5 @@ npm run build
 npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-=======
 # CSS-Well-Play
 css well play
->>>>>>> ced6966ec0f7c2a07e06b8a491c6d38a9be44353

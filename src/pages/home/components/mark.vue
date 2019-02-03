@@ -24,7 +24,7 @@ export default {
 @import '../../../assets/style/color.styl'
 
 .mark_wrapper 
-    position absolute
+    position fixed
     right 2em
     top 15em  
     width 50px
@@ -35,7 +35,9 @@ export default {
         height 50px 
         line-height 50px
         text-align center
-        background #ddd
+        background #f0422a
+        box-shadow 0 0 15px #f0422a
+        color #fff
         $radius5() 
         cursor pointer
         .tags-list
@@ -50,8 +52,9 @@ export default {
             width 150px
             padding .5em
             display block
-            background #ddd
+            background #fff
             transition all .25s
+            color #999
             li   
                 line-height 30px
                 padding 0 1em
@@ -60,9 +63,9 @@ export default {
                     float right
                     display none
             li:hover, li:hover span
-                background #dcdcdc
+                background #eee
                 display block
-                color #888
+                color #999
                 span:hover
                     color #353535
     .add-tags:hover .tags-list
@@ -74,6 +77,6 @@ export default {
         transform rotateZ(-90deg)
         margin-top 2em
     .add-tags:hover, .go:hover
-        background #bbb
+        background #fc6c32
                 
 </style>

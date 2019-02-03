@@ -33,6 +33,7 @@ export default {
     position relative
     padding 1em 0
     background #ffffff   
+    z-index 2
     .logobox  
         margin-left 2em    
         display inline-block
@@ -58,6 +59,7 @@ export default {
                     text-align center
                     display block 
                     border-radius 3px
+                    padding 0
                 .svg
                     background $svg
                 .h5

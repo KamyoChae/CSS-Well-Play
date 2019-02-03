@@ -1,6 +1,7 @@
 <template>
 <div class="home_wrapper">
     <HomeHeader />
+    <HomeFall /> 
     <HomeMark /> 
 </div>
 
@@ -9,6 +10,7 @@
 <script>
 import HomeHeader from "./components/header"
 import HomeMark from "./components/mark"
+import HomeFall from "./components/fall"
 export default {
     name:"Index",
     data() {
@@ -19,6 +21,7 @@ export default {
     components:{
         HomeHeader,
         HomeMark,
+        HomeFall
     }
 
 }
@@ -27,8 +30,8 @@ export default {
 <style lang="stylus" scoped>
 .home_wrapper
     position absolute
-    width 100%
-    height 100%
+    width 100% 
+    min-height 100%
     background #eee
 
 </style>

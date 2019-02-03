@@ -22,7 +22,7 @@
     </div>
     
     <ul class="ul-list">
-        <router-link to="/Show/content" tag="li">这里是一个超链接</router-link> 
+        <router-link :to='{name:"content"}' tag="li">这里是一个超链接</router-link> 
         <router-link to="/" tag="li">这里是一个超链接</router-link>
         <router-link to="/" tag="li">这里是一个超链接</router-link>
         <router-link to="/" tag="li">这里是一个超链接</router-link>

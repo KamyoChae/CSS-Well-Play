@@ -26,6 +26,7 @@ export default new Router({
       children :[
         {
           path:"content", 
+          name:"content",
           component:content
         },
 

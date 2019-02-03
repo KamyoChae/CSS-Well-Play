@@ -1,7 +1,7 @@
 <template>
 <div class="home_wrapper">
-    <HomeHeader /> 
-    <HomeMark />
+    <HomeHeader />
+    <HomeMark /> 
 </div>
 
 </template>

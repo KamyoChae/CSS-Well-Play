@@ -29,6 +29,7 @@ export default {
     top 15em  
     width 50px
     .add-tags, .go
+        z-index 50
         box-sizing border-box
         position relative
         width 50px 
@@ -71,8 +72,7 @@ export default {
     .add-tags:hover .tags-list
         display block 
         opacity 1
-        left -150px 
-        z-index 1
+        left -150px  
     .go  
         transform rotateZ(-90deg)
         margin-top 2em

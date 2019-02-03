@@ -9,8 +9,8 @@
                         <div class="tags-time">
                             <div class="tags">
                                 <span class="css3">css3</span>
-                                <span class="h5">h5</span>
-                    
+                                <span class="h5">h5</span> 
+                                <span class="canvas">canvas</span>
                             </div>
                             <span class="time">2019-02-02</span>
                         </div>
@@ -55,6 +55,7 @@ export default {
                 margin-bottom 1em
                 box-shadow 0 0 30px #bbb
                 $radius5()
+                transition all .3s
                 img
                     width 100%
                     $radius5()
@@ -66,7 +67,8 @@ export default {
                         font-size .8em
                         display flex
                         justify-content space-between
-                            
+            .item-box:hover
+                box-shadow 0 0 30px #565656
 
 
 </style>

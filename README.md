@@ -1,6 +1,6 @@
 
 # CSS-Well-Play
-css well play [需求文档](https://github.com/KamyoChae/CSS-Well-Play/blob/master/%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3.md)
+css well play [需求文档](https://github.com/KamyoChae/CSS-Well-Play/blob/master/design_page/%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3.md)
 
 > A css project
 

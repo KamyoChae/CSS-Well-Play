@@ -1,24 +1,21 @@
 <template>
-    <div>
+    <div class="show_wrapper">
         <ShowNav />
         <div class="body-foot"> 
             <router-view />
-            <ShowFoot /> 
+            
         </div>
     </div>
 </template>
 
 <script>
-import ShowNav from './components/nav'
-import ShowBody from './components/body'
-import ShowFoot from './components/foot'
+import ShowNav from './components/nav' 
+
 export default {
 
-    name:"show",
-    comments:{
-        ShowNav,
-        ShowBody,
-        ShowFoot
+    name:"Show",
+    components:{
+        ShowNav,  
 
     }
 
@@ -26,5 +23,9 @@ export default {
 </script>
 
 <style lang='stylus' scoped>
-
+.show_wrapper
+    position relative
+    .body-foot
+        position relative
+        margin-left 20%
 </style>

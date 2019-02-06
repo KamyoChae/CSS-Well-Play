@@ -1,11 +1,11 @@
 <template>
     <div class="fall_wrapper">
       <ul class="fall-ul">
-          <li>
+          <li >
               <div class="item-box">
                     <img src="../../../images/1.png" alt="">
                     <div class="content">
-                        <p class="title">纯css实现黄包车</p>
+                        <p class="title">纯css实现动态黄包车黄包车</p>
                         <div class="tags-time">
                             <div class="tags">
                                 <span class="css3">css3</span>
@@ -17,8 +17,11 @@
                     </div>
               </div>
  
-          </li> 
-
+          </li>  
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
 
       </ul>
     </div>
@@ -26,8 +29,27 @@
 </template>
 
 <script>
+import {mapState} from "vuex" 
+import homeVue from '../home.vue';
 export default {
+    data(){
+        return {
 
+        }
+    },
+    computed:{
+        ...mapState({
+            homeList : state => state.homeList
+        }),
+        reverseList(){
+            return this.homeList.reverse()
+        }
+
+    },
+    mounted(){ 
+        console.log(this.homeList, this.reverseList)
+         
+    }
 }
 </script>
 

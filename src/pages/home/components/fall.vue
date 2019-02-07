@@ -3,7 +3,8 @@
       <ul class="fall-ul" ref="fallUl" > 
  
         <li v-for="(items, index) of this.liarr" :key="index">
-            <div class="item-box" v-for="item in items" :key="item.title">
+            <div  class="item-box" v-for="item in items" :key="item.title">
+                <div data-link="item.nav" @click="linkTo()" ref="dataLink">
                     <img src="../../../images/1.png" alt="">
                     <div class="content">
                         <p class="title">{{item.title}}</p>
@@ -16,6 +17,7 @@
                             <span class="time">2019-02-02</span>
                         </div>
                     </div>
+                </div>
             </div>
 
         </li>
@@ -41,32 +43,37 @@ export default {
         }),
         reverseList(){
             return this.homeList.reverse()
-        }, 
-
-
+        },  
     },
     methods:{
+        linkTo(){
+            console.log("click")
+            let link = this.$refs.dataLink
+            console.log(link)
+            
+        },
         renderList(){
 
             // 这里通过获取ul内子节点个数动态生成数组 
             // 然后通过遍历state传过来的数据动态插入到对应的数组中
             // 最后将数组中的数组分辨渲染到页面 
             // 实现vue不直接操作dom的瀑布流效果
+
             let pro = 0 
-            console.log(Object.prototype.toString.call(this.liarr))
-            for(let i = 0; i < this.liLength; i++){
-                this.liarr.push(new Array())
-                
-                
+            let len = this.liLength 
+             
+            for(let i = 0; i < len; i++){
+                this.liarr.push(new Array()) 
             } 
-            console.log(this.liarr)
+ 
+
             this.reverseList.forEach((ele, index) => {
-                if(index == this.liLength){ 
-                     pro = 0 
-                }  
-                console.log(this.liarr[pro], pro)
-                // this.liarr[pro].push(ele)
-                pro ++
+                
+                if(index % len == 0){ // index = 5 的时候 pro变成0
+                     pro = 0  
+                }   
+                this.liarr[pro].push(ele)
+                pro ++  
             }); 
         },
     },

@@ -3,11 +3,16 @@
       <ul class="fall-ul" ref="fallUl" > 
  
         <li v-for="(items, index) of this.liarr" :key="index">
-            <div  class="item-box" v-for="item in items" :key="item.title">
-                <div data-link="item.nav" @click="linkTo()" ref="dataLink">
-                    <img src="../../../images/1.png" alt="">
+            <div  class="item-box" 
+                v-for=" item of items" 
+                :key="item.title"
+                :data-link="item.nav" 
+                @click="linkTo(item.nav, item.index)" 
+            >
+                <!-- <div > -->
+                    <img  src="../../../images/1.png" alt="">
                     <div class="content">
-                        <p class="title">{{item.title}}</p>
+                        <p class="title">{{item.nav}}</p>
                         <div class="tags-time">
                             <div class="tags">
                                 <span class="css3">css3</span>
@@ -17,7 +22,7 @@
                             <span class="time">2019-02-02</span>
                         </div>
                     </div>
-                </div>
+                <!-- </div> -->
             </div>
 
         </li>
@@ -41,16 +46,14 @@ export default {
         ...mapState({
             homeList : state => state.homeList
         }),
-        reverseList(){
-            return this.homeList.reverse()
-        },  
+  
     },
     methods:{
-        linkTo(){
-            console.log("click")
-            let link = this.$refs.dataLink
-            console.log(link)
-            
+        linkTo(str, index){
+            console.log(str, index) 
+            let routerPath = "/show/content#" + str 
+            this.$store.commit("pushIndex", index)
+            this.$router.push(routerPath)  
         },
         renderList(){
 
@@ -64,10 +67,10 @@ export default {
              
             for(let i = 0; i < len; i++){
                 this.liarr.push(new Array()) 
-            } 
+            }
  
 
-            this.reverseList.forEach((ele, index) => {
+            this.homeList.forEach((ele, index) => {
                 
                 if(index % len == 0){ // index = 5 的时候 pro变成0
                      pro = 0  

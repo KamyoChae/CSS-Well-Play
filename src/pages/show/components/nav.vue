@@ -21,15 +21,16 @@
    
     </div>
     
-    <ul class="ul-list">
-        <router-link :to='{name:"content"}' tag="li">这里是一个超链接</router-link> 
-        <router-link to="/" tag="li">这里是一个超链接</router-link>
-        <router-link to="/" tag="li">这里是一个超链接</router-link>
-        <router-link to="/" tag="li">这里是一个超链接</router-link>
-        <router-link to="/" tag="li">这里是一个超链接</router-link>
-        <router-link to="/" tag="li">这里是一个超链接</router-link>
-        <router-link to="/" tag="li">这里是一个超链接</router-link>
-        <router-link to="/" tag="li">这里是一个超链接</router-link>
+    <ul class="ul-list" @click="getdataIndex">
+        <router-link 
+            :to='item.nav' 
+            tag="li" 
+            v-for="item of this.homeList" 
+            :key="item.id"
+            :data-id="item.id"
+            
+        >{{item.title}}</router-link> 
+ 
     </ul>
     
 </div>
@@ -37,7 +38,20 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
+    computed:{
+        ...mapState({
+            homeList: state => state.homeList
+        })
+    },
+    methods:{
+        getdataIndex(e){
+            let id = e.target.dataset.id
+            console.log(id)
+            this.$store.commit("pushIndex", id) 
+        }
+    }
 
 }
 </script>

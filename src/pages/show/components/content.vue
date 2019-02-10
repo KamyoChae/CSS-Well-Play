@@ -3,11 +3,8 @@
    <div class="title-box">
        <h3 >{{this.myContent.title}}</h3>
        <div class="content">
-            <div class="icon">
-                <span class="h5">HTML5</span>
-                <span class="css3">CSS3</span>
-                <span class="canvas">Canvas</span>
-                <span class="svg">SVG</span>
+            <div class="icon" v-for="item in this.myContent.tags" :key="item">
+                <span :class="item">{{item}}</span> 
             </div>
             <span class="time">{{this.myContent.time}}</span>
        </div>
@@ -30,21 +27,24 @@
 import ShowFoot from './foot'
 import { mapState } from 'vuex';
 export default { 
+    data(){
+        return { 
+        }
+    },
     components:{
         ShowFoot
     },
     methods:{
         checkContent(){ 
-            let obj = this.myContent.index  
+            let obj = this.myContent.id  
             if(obj === undefined){  
                 this.$router.push("/")
             } 
         },
         getRootTags(){
             try {
-                
                 let root = document.getElementsByTagName("style")[0]
-                let css = this.myContent.innerCss.replace(/\u200B/g, "")  
+                let css = this.myContent.innerCss.replace(/\u200B/g, "")
                 root.innerHTML = css
             } catch (error) {
                 alert("该demo已失效，请换一个！")
@@ -52,8 +52,8 @@ export default {
         },
         destroyedRoot(){
             document.getElementsByTagName("style")[0].innerHTML = ""
-        }
-        
+        },
+ 
     },
     computed:{
         ...mapState({
@@ -64,7 +64,7 @@ export default {
         this.checkContent()
     },
     mounted(){
-        this.getRootTags()
+        this.getRootTags() 
     },
     destroyed(){
         this.destroyedRoot()

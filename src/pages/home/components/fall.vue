@@ -7,17 +7,16 @@
                 v-for=" item of items" 
                 :key="item.title"
                 :data-link="item.nav" 
-                @click="linkTo(item.nav, item.index)" 
+                @click="linkTo(item.nav, item.id)" 
             >
                 <!-- <div > -->
                     <img  src="../../../images/1.png" alt="">
                     <div class="content">
-                        <p class="title">{{item.nav}}</p>
+                        <p class="title">{{item.title}}</p>
                         <div class="tags-time">
                             <div class="tags">
-                                <span class="css3">css3</span>
-                                <span class="h5">h5</span> 
-                                <span class="canvas">canvas</span>
+                               <span :class="tag" v-for="tag in item.tags" :key="tag">{{tag}}</span> 
+
                             </div>
                             <span class="time">2019-02-02</span>
                         </div>
@@ -49,11 +48,11 @@ export default {
   
     },
     methods:{
-        linkTo(str, index){
-            console.log(str, index) 
-            let routerPath = "/show/content#" + str 
-            this.$store.commit("pushIndex", index)
-            this.$router.push(routerPath)  
+        linkTo(str, id){ 
+            console.log(str, id)
+            this.$store.commit("pushIndex", id)
+            
+            this.$router.push(str)  
         },
         renderList(){
 
@@ -123,7 +122,9 @@ export default {
                     .tags-time
                         font-size .8em
                         display flex
-                        justify-content space-between
+                        justify-content space-between 
+                        .tags span
+                            margin 0 .1em
             .item-box:hover  
                 box-shadow 0 0 20px #bbb
 

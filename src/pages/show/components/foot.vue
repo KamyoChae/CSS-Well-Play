@@ -1,8 +1,8 @@
 <template>
 <div class="foot_wrapper">
     <div class="swapper">
-        <span class="pre" @click="beforeone">上一个：</span>
-        <span class="next" @click="nextone">下一个：</span>
+        <span class="pre" @click="beforeone">上一个：{{this.$store.state.preTitle}}</span>
+        <span class="next" @click="nextone">下一个：{{this.$store.state.nextTitle}}</span>
     </div>
 </div>
 
@@ -16,10 +16,10 @@ export default {
     },
     methods:{
         beforeone(){
-            this.$store.commit("beforeOne")
+            this.$store.commit("swapone", -1) 
         },
         nextone(){
-            
+            this.$store.commit("swapone", 1) 
         }
     }
 

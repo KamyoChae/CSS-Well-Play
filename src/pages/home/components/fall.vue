@@ -4,12 +4,11 @@
  
         <li v-for="(items, index) of this.liarr" :key="index">
             <div  class="item-box" 
-                v-for=" item of items" 
+                v-for=" item of items"
                 :key="item.title"
                 :data-link="item.nav" 
                 @click="linkTo(item.nav, item.id)" 
-            >
-                <!-- <div > -->
+            > 
                     <img  src="../../../images/1.png" alt="">
                     <div class="content">
                         <p class="title">{{item.title}}</p>
@@ -20,8 +19,7 @@
                             </div>
                             <span class="time">2019-02-02</span>
                         </div>
-                    </div>
-                <!-- </div> -->
+                    </div> 
             </div>
 
         </li>
@@ -102,9 +100,9 @@ export default {
             font-size 16px
             box-sizing border-box
             display inline-block
-            width 20%  
+            width 20%
             padding .5em
-            background #eee   
+            background #eee
             .item-box
                 position relative
                 background #fff

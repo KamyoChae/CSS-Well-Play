@@ -1,25 +1,66 @@
 export default{
     pushIndex(state, id){
-        let index = state.homeList.length- id-1
-        state.content = state.homeList[index]
+        
+        let list = state.homeList
+        let index = list.length- id-1
+        state.content = list[index]
         console.log(state.content)
+        try {
+            
+            state.preTitle = list[index-1].title  
+        } catch (error) {
+            state.preTitle = "没有了"
+        }
+        try {
+            
+            state.nextTitle = list[index+1].title  
+        } catch (error) {
+            state.nextTitle = "没有了"
+        }
         this.commit("refreshIndex", index)
     },
     refreshIndex(state, index){
         state.nowIndex = index
         console.log("refresh：" + index)
     },
-    beforeOne(state){
+    swapone(state, flag){
         let index = state.nowIndex
-        index --
+        console.log(flag)
+        index += flag
         if(state.homeList[index]){
-            state.content = state.homeList[index]
+            
+            let list = state.homeList
+            state.content = list[index]
             state.nowIndex = index
-            return state.content.title
+            if(flag > 0){  
+                // 表示点击了next
+                try { 
+                    state.preTitle = list[index-flag].title
+                    
+                } catch (error) { 
+                    state.preTitle = "没有了"
+                }
+                try {
+                    state.nextTitle = list[index+flag].title
+                } catch (error) {
+                    state.nextTitle = "没有了"
+                }
+            }else{
+                // 表示点击了pre
+                try { 
+                    state.preTitle = list[index+flag].title 
+                } catch (error) { 
+                    state.preTitle = "没有了"
+                }
+                try {
+                    state.nextTitle = list[index-flag].title
+                } catch (error) {
+                    state.nextTitle = "没有了"
+                } 
+            }
         }else{
-            return "没有了"
+            
         }
-        
-
+         
     }
 }

@@ -1,7 +1,7 @@
 import homeList from './homeList.js'
 export default{
     homeList,
-    "content":        {
+    "content": {
         index:"0", 
         nav:"2019-02-021",
         imgsrc:"../../images/2019-02-0201.png",
@@ -58,5 +58,7 @@ export default{
             top: 50%;
         }`,
     },
-    "nowIndex":""
+    "nowIndex":"",
+    "preTitle":"",
+    "nextTitle":"",
 }

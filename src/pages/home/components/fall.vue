@@ -47,7 +47,7 @@ export default {
     },
     methods:{
         linkTo(str, id){ 
-            console.log(str, id)
+            // console.log(str, id)
             this.$store.commit("pushIndex", id)
             
             this.$router.push(str)  

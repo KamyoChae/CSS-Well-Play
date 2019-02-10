@@ -4,7 +4,7 @@ export default{
         let list = state.homeList
         let index = list.length- id-1
         state.content = list[index]
-        console.log(state.content)
+        // console.log(state.content)
         try {
             
             state.preTitle = list[index-1].title  
@@ -21,11 +21,11 @@ export default{
     },
     refreshIndex(state, index){
         state.nowIndex = index
-        console.log("refresh：" + index)
+        // console.log("refresh：" + index)
     },
     swapone(state, flag){
         let index = state.nowIndex
-        console.log(flag)
+        // console.log(flag)
         index += flag
         if(state.homeList[index]){
             

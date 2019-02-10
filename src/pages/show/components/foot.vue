@@ -28,8 +28,9 @@ export default {
 
 <style lang='stylus' scoped>
 .foot_wrapper
-    margin-top 3em
+    padding-top 3em  
     .swapper
+        width 100%
         display flex
         justify-content space-between
         color #259ce5

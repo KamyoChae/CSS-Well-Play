@@ -64,9 +64,15 @@ export default {
         this.checkContent()
     },
     mounted(){
+        // console.log("装载一次content")
+        this.getRootTags() 
+    },
+    updated(){
+        // console.log("更新一次content")
         this.getRootTags() 
     },
     destroyed(){
+        // console.log("销毁一次content")
         this.destroyedRoot()
     }
 
@@ -97,4 +103,6 @@ export default {
             font-size 1.5em
             line-height 2.5em
             text-indent 2em
+        .innerHtml
+            overflow hidden
 </style>

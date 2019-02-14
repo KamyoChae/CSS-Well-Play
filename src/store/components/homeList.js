@@ -4,10 +4,10 @@ const homeList =  [
         {
             id:"2", 
             nav:"/show/content#2019-02-021",
-            imgsrc:"../../images/2019-02-0201.png",
+            imgsrc:"../../images/0204.JPG",
             title:"纯h5+css实现视觉错觉",
             time:"2019-02-04",
-            tags:["css3","h5"], 
+            tags:["canvas","css3","h5"], 
             innerHtml:'<div class="entry" id="impossible-cube"><div></div></div>',
             innerCss:`#impossible-cube div {
                 width: 220px;
@@ -61,10 +61,10 @@ const homeList =  [
         {
             id:"1", 
             nav:"/show/content#2019-02-0",
-            imgsrc:"../../images/2019-02-0201.png",
+            imgsrc:"../../images/0202.JPG",
             title:"一个div画出来的小脑斧",
             time:"2018-02-02",
-            tags:["canvas", "svg","css3","h5"], 
+            tags:[ "svg","css3","h5"], 
             innerHtml:'<div class="entry" id="tiger"><div></div></div>',
             innerCss:`#tiger {
                 background: #899d4e;
@@ -130,7 +130,7 @@ const homeList =  [
         {
             id:"0", 
             nav:"/show/content#2019-02-1",
-            imgsrc:"../../images/2019-02-0201.png",
+            imgsrc:"../images/0102.JPG",
             title:"用css画一个披萨饼",
             time:"2019-01-02",
             tags:["css3", "h5"], 

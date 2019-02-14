@@ -8,7 +8,7 @@
                 :key="item.title"
                 :data-link="item.nav" 
                 @click="linkTo(item.nav, item.id)" 
-            > 
+            >
                     <img  src="../../../images/1.png" alt="">
                     <div class="content">
                         <p class="title">{{item.title}}</p>
